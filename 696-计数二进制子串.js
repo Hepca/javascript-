@@ -34,19 +34,19 @@ var countBinarySubstrings = function(str) {
         // 取反 o和j的长度是相等，而且是取反，如1变成0 ，0变成1
         // repeat 快速生成几倍长度的相同字符串
         let o = (j[0]^1).toString().repeat(j.length)
-        let reg = new RegExp(`^(${j}${o})`)
-        if (reg.test(str)) {
-            return RegExp.$1
-        } else {
-            return ''
-        }
-        // 或者 这种在leetcode跑不通，会抛出代码异常，可能涉及到敏感词过滤
-        // let q = j+o;
-        // if(s.startsWith(q)){
-        //     return true;
+        //或者 这种在leetcode跑不通，会抛出代码异常，可能涉及到敏感词过滤
+        // let reg = new RegExp(`^(${j}${o})`)
+        // if (reg.test(str)) {
+        //     return RegExp.$1
         // } else {
-        //     return false;
+        //     return ''
         // }
+        let q = j+o;
+        if(s.startsWith(q)){
+            return true;
+        } else {
+            return false;
+        }
     }
     for (let i = 0, len = str.length - 1; i < len; i++) {
         let sub = match(str.slice(i))
