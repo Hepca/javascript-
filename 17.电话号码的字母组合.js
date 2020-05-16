@@ -15,6 +15,7 @@
  * 知识点:
  *      String.prototype.splice
  */
+let str = '23'
 var letterCombinations = function (str) {
     let map = ['', 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
     let num = str.split('')
@@ -49,3 +50,5 @@ var letterCombinations = function (str) {
     // 这个code就是第一步算出来的结果
     return comb(code)
 }
+letterCombinations(str)
+console.log(letterCombinations(str))  // ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
