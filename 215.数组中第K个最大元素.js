@@ -9,7 +9,6 @@
  * 
  * 思路:
  *      1.冒泡排序：
- *       ft
  */
 var findKthLargest = function(arr, k) {
     // return arr.sort((a, b) => b - a)[k-1]
