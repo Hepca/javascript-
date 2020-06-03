@@ -67,12 +67,22 @@
                 }
             }
         } else {
-            arr.push([start, end])
+            arr.push([[start, end]])
             maxRect(arr, result, n++)
         }
      }
      while(arr.length > 1) {
          maxRect([].concat(arr), result)
+         arr.pop()
      }
-     return 0
+     // 取最大值
+     let max = 0
+     let item = result.pop()
+     while(item) {
+         if (item > max) {
+             max = item
+         }
+         item = result.pop()
+     }
+     return max > 0 ? max : -1
  }
